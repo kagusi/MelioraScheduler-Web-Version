@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Meliora Scheduler Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <!-- All Jquery and Boostrap apis -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="styles.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+	<script type="text/javascript" src="../JavaScript/app.js"></script>
+	
+	<script type="text/javascript" src="../JavaScript/form_validator.js"></script>
+	<script type="application/javascript" src="../JavaScript/user_process.php"></script>
+	<link rel="stylesheet" type="text/css" href="../CSS/snack.css">
+
+  
+  <style>
+        .image{background-color: green;}
+		
+		body, html {   
+			width: 100%;
+			height: 100%;
+			min-height: 100%;
+			margin: 0;
+			padding: 0;
+			display:table;
+			background-image:url(../Images/lib6.jpg)
+		}
+
+        .card {
+			display:table;
+            box-shadow: 5px 4px 8px 5px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+            border-radius: 10px;
+            position: relative;
+            margin: auto;
+            overflow: auto;
+			background: white;
+
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .con{
+            background-color: #4CAF50;
+			color: white;
+            width: 100%;
+        }
+
+        .info {
+            padding: 2px 16px;
+        }
+		
+		form {
+			border: 3px solid #f1f1f1;
+		}
+
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		.cancelbtn {
+			width: auto;
+			padding: 10px 18px;
+			background-color: #f1f1f1;
+			text-decoration: none;
+		}
+
+		.imgcontainer {
+			text-align: center;
+			margin: 24px 0 12px 0;
+		}
+
+		.container {
+			padding: 16px;
+		}
+
+		span.psw {
+			float: right;
+			padding-top: 16px;
+		}
+		.error {color: #FF0000;}
+		
+		.footer {
+		  clear: both;
+		  position: fixed;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		
+		  background-color: black;
+		  text-align: center;
+		  color: white;
+		}
+		
+		#df {
+			padding-top: 50px;
+        }
+      
+    </style>
+	
+
+		
+  <script> 
+	
+	$(function(){
+		var user = getCookie("User");
+		if (user != "") {
+			restoreSession(user);
+			//window.location.replace("account.php");
+		}
+		$("#footer").load("../headers/footer.html"); 
+		$("#header").load("../headers/header.html");
+	});
+				
+   </script>
+   
+   <!-- Display signup toast -->
+   <script>
+    $(document).ready(function(){
+		//var x = document.referrer;
+		var temp = [];
+		temp = window.location.search.substr(1).split("=");
+		if(temp[1] == "true")
+			mySignUpSnack();
+    });
+   </script>
+	
+	<!-- This javascript/function runs once a user presses 'login up' button -->
+	<script>
+      $(function () {
+
+        $('form').on('submit', function (e) {
+
+			 e.preventDefault();
+			 /*Sends user data to REST API verification/login access
+			 * This function is in form_validator.js
+			 */
+			 signIn(this);		      
+        });
+
+      });
+    </script>
+	
+
+
+  </head>
+  <body>
+  <div id="header"></div>
+ 
+ <div class="center-block" id="df">
+ <div class="card" id="card" >
+
+    <div class="info">
+        <!---  <span class="error" id="signinErr"><h3 align="center"></h3</span>  -->
+    </div>
+
+    <div class="info">
+        <p id="signinErr" class="error"></p>
+        <form name="login">
+		
+		  <div class="info">
+			<label><b>Username</b></label>
+			<span class="error" id="emailErr">*</span>
+			<input type="text" placeholder="Enter Username" name="email" required>
+			<br>
+			<label><b>Password</b></label>
+			<span class="error" id="passErr">*</span>
+			<input type="password" placeholder="Enter Password" name="password" required>
+			<br>
+			<button type="submit">Login</button>
+			<br>
+			<input type="checkbox" checked="checked"> Remember me
+		  </div>
+
+		  <div class="info" style="background-color:#f1f1f1">
+			<button type="button" class="cancelbtn"></button>
+			<span class="psw">Forgot <a href="forgot_pass.html">password?</a></span>
+		  </div>
+  
+		</form>
+	<br>
+    </div>
+
+</div>
+</div>
+
+<div id="signup_snackbar">Signup Success!!!</div>
+
+<div  id="footer"></div>
+ 
+ </body>
+
+  </html>

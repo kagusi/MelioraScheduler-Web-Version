@@ -1,0 +1,12 @@
+{
+  
+  "gcm_sender_id": "103953800507",
+  "icons": [
+			{
+				"src": "prof\/Images\/favicon.ico",
+				"sizes": "128x128",
+				"type": "image\/ico",
+				"density": 0.75
+			}
+		]
+}

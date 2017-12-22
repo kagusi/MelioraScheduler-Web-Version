@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+#myfooter > li > a{
+    padding-top:5px !important; padding-bottom:0 !important;
+    height: 30px;
+}
+#fo {
+	min-height:30px !important;	
+	border: transparent;
+	background-color:FF0D5B; 
+    opacity: 0.5; 
+    filter:(opacity=50); 
+}
+body {
+    font-family: "Lato", sans-serif;
+}
+
+<script>
+	$(document).ready(function(){
+		
+		var cpoyright = document.getElementById("cpy");
+		var d = new Date();
+		var n = d.getFullYear();
+		
+		cpoyright.innerHTML = "Copyright &copy; 2017 - "+n+ " Appointment Wizard.";
+	});
+
+</script>
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-bottom " id="fo">		
+        <ul class="nav navbar-nav  navbar-collapse" id="myfooter" >
+			<li><a ><small style="color:white" id ="cpy">Copyright &copy; 2017 - Appointment Wizard.</small></a></li>
+            <li><a href="#" style="color:white"><b>About Us</b></a></li>
+            <li><a href="#"><span style="color:white"><b>Contact Us</b></span></a></li>
+			<li><a href="login.html"><span style="color:white"><b>FAQ</b></span> </a></li>			
+
+        </ul>
+    </div>
+</nav>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+[debug] [2017-12-14T21:43:02.587Z] ----------------------------------------------------------------------
+[debug] [2017-12-14T21:43:02.591Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kenne\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-14T21:43:02.592Z] CLI Version:   3.16.0
+[debug] [2017-12-14T21:43:02.592Z] Platform:      win32
+[debug] [2017-12-14T21:43:02.592Z] Node Version:  v8.6.0
+[debug] [2017-12-14T21:43:02.592Z] Time:          Thu Dec 14 2017 16:43:02 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-14T21:43:02.592Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-14T21:43:02.605Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-14T21:43:02.605Z] > authorizing via signed-in user
+[debug] [2017-12-14T21:43:02.607Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-14T21:43:02.607Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/K_hgDqZnETe0gz_eSOzNNuMnZGYCCBfOHPcgTy3bHgw',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Dec 14 2017 16:43:02 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-14T21:43:02.889Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-14T21:43:03.014Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/meliorascheduler  
+  
+ Thu Dec 14 2017 16:43:03 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-14T21:43:03.522Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-14T21:43:03.523Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/meliorascheduler/tokens  
+  
+ Thu Dec 14 2017 16:43:03 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-14T21:43:04.024Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\wamp64\www\IndependentProject'...
+[info] 
+[debug] [2017-12-14T21:43:04.034Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/meliorascheduler  
+  
+ Thu Dec 14 2017 16:43:04 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-14T21:43:04.485Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-14T21:43:04.486Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/509296316051/clients/_:getWebAppConfig  
+  
+ Thu Dec 14 2017 16:43:04 GMT-0500 (Eastern Standard Time)
+[debug] [2017-12-14T21:43:05.023Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-14T21:43:06.142Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (C:\Users\kenne\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\hosting.js:34:17)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1371:10)
+    at _combinedTickCallback (internal/process/next_tick.js:135:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
