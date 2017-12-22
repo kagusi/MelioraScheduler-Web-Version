@@ -1,5 +1,5 @@
 # MelioraScheduler-Web-Version
-This is an Independent Project I did during Fall 2015 (Web version).
+This is an Independent Project I did during Fall 2017 (Web version).
 
 The main goal of this project is to automate the process by which students schedule appointments with their professors/advisors.
 
